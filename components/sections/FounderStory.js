@@ -11,7 +11,7 @@ export default function FounderStory({ aboutPage }) {
               src="/images/founder-photo.webp"
               alt={aboutPage.founderPhotoAlt}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(min-width: 1024px) 400px, 80vw"
               priority
             />
