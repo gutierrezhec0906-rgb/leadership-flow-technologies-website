@@ -8,7 +8,7 @@ import { aboutPage } from "@/lib/content";
 export const metadata = {
   title: "About",
   description:
-    "Leadership Flow Technologies was founded by Hector Gutierrez after 30+ years leading teams in aerospace, defense, and electronics manufacturing across the US, Mexico, and Canada.",
+    "Leadership Flow Technologies was founded by Hector Gutierrez after 30+ years leading teams in aerospace, defense, and electronics manufacturing across the US, Mexico, Canada, and the Czech Republic.",
   alternates: { languages: { es: "/es/about" } },
 };
 

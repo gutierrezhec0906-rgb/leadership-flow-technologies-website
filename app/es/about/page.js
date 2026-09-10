@@ -9,7 +9,7 @@ import { aboutPage } from "@/lib/content.es";
 export const metadata = {
   title: "Nosotros",
   description:
-    "Leadership Flow Technologies fue fundada por Hector Gutierrez después de más de 30 años liderando equipos en manufactura aeroespacial, de defensa y electrónica en Estados Unidos, México y Canadá.",
+    "Leadership Flow Technologies fue fundada por Hector Gutierrez después de más de 30 años liderando equipos en manufactura aeroespacial, de defensa y electrónica en Estados Unidos, México, Canadá y República Checa.",
   alternates: { canonical: "/es/about", languages: { en: "/about" } },
   openGraph: {
     type: "website",
