@@ -9,17 +9,29 @@ export default function PodcastSection({ resourcesPage, podcastEpisodes }) {
         <SectionHeader eyebrow={resourcesPage.podcastEyebrow} headline={resourcesPage.podcastHeadline} theme="light" />
         <div className="mx-auto mt-14 max-w-3xl divide-y divide-navy/10 overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-card">
           {podcastEpisodes.map((episode, index) => (
-            <Reveal key={episode.number} delay={index * 0.06} className="flex items-center gap-5 p-6">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-dark-green text-teal-light">
-                <Icon name="Mic" size={20} />
-              </div>
-              <div className="flex-1">
-                <p className="text-xs font-bold uppercase tracking-wide text-mid-green">
-                  {resourcesPage.episodeLabel} {episode.number}
-                </p>
-                <h3 className="font-bold text-dark-green">{episode.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-navy/70">{episode.description}</p>
-              </div>
+            <Reveal key={episode.number} delay={index * 0.06}>
+              <a
+                href={episode.spotifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${resourcesPage.listenOnSpotify}: ${episode.title}`}
+                className="group flex items-center gap-5 p-6 transition-colors hover:bg-pale-green/50"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-dark-green text-teal-light transition-colors group-hover:bg-mid-green">
+                  <Icon name="Mic" size={20} />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs font-bold uppercase tracking-wide text-mid-green">
+                    {resourcesPage.episodeLabel} {episode.number}
+                  </p>
+                  <h3 className="font-bold text-dark-green">{episode.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-navy/70">{episode.description}</p>
+                </div>
+                <span className="hidden shrink-0 items-center gap-1.5 text-sm font-semibold text-mid-green sm:flex">
+                  {resourcesPage.listenOnSpotify}
+                  <Icon name="ArrowRight" size={16} className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </a>
             </Reveal>
           ))}
         </div>
