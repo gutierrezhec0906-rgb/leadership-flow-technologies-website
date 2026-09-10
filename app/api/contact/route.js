@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendMail, escapeHtml } from "@/lib/mailer";
 
 export async function POST(request) {
   let body;
@@ -19,9 +20,37 @@ export async function POST(request) {
     return NextResponse.json({ error: "A valid email address is required." }, { status: 400 });
   }
 
-  // TODO: connect to a real email service (e.g. Resend, SendGrid) or CRM so
-  // this inquiry actually reaches Hector@accountability-app.com.
-  console.log("New contact inquiry:", { name, company, email, phone, leaderCount, message });
+  try {
+    await sendMail({
+      subject: `New contact inquiry from ${name}`,
+      replyTo: email,
+      text: [
+        `Name: ${name}`,
+        `Company: ${company || "-"}`,
+        `Email: ${email}`,
+        `Phone: ${phone || "-"}`,
+        `Number of Leaders: ${leaderCount || "-"}`,
+        "",
+        "Message:",
+        message,
+      ].join("\n"),
+      html: `
+        <h2>New contact inquiry</h2>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Company:</strong> ${escapeHtml(company || "-")}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone || "-")}</p>
+        <p><strong>Number of Leaders:</strong> ${escapeHtml(leaderCount || "-")}</p>
+        <p><strong>Message:</strong><br />${escapeHtml(message).replace(/\n/g, "<br />")}</p>
+      `,
+    });
+  } catch (err) {
+    console.error("Failed to send contact email:", err);
+    return NextResponse.json(
+      { error: "Could not send your message right now. Please email us directly." },
+      { status: 502 }
+    );
+  }
 
   return NextResponse.json({ success: true });
 }
