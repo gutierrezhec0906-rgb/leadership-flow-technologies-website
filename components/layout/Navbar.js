@@ -53,10 +53,10 @@ export default function Navbar() {
             className="h-11 w-11 sm:hidden"
           />
           <Image
-            src="/images/logo-full.png"
+            src="/images/logo-full.webp"
             alt=""
-            width={964}
-            height={324}
+            width={1969}
+            height={684}
             priority
             className="hidden h-9 w-auto sm:block"
           />
