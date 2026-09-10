@@ -1,4 +1,5 @@
 import Reveal from "@/components/ui/Reveal";
+import PhoneFrame from "@/components/ui/PhoneFrame";
 
 const sampleLeaders = [
   { name: "Leader A", progress: 92 },
@@ -25,16 +26,12 @@ export default function RealTimeMonitoring({ appPage }) {
           </div>
         </Reveal>
         <Reveal delay={0.15} className="mx-auto w-full max-w-xs">
-          <div
-            className="rounded-[2.5rem] border-4 border-white/10 bg-deep-teal p-4 shadow-card-hover"
-            role="img"
-            aria-label={appPage.monitoring.ariaLabel}
-          >
-            <div className="rounded-[1.75rem] bg-white/5 p-5">
+          <PhoneFrame src={appPage.monitoring.screenshotSrc} alt={appPage.monitoring.ariaLabel}>
+            <div className="flex h-full flex-col p-5" role="img" aria-label={appPage.monitoring.ariaLabel}>
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-light">
                 {appPage.monitoring.teamProgressLabel}
               </p>
-              <div className="mt-4 space-y-4">
+              <div className="mt-4 space-y-4 pb-8">
                 {sampleLeaders.map((leader) => (
                   <div key={leader.name}>
                     <div className="mb-1.5 flex justify-between text-xs font-medium text-off-white/80">
@@ -48,7 +45,7 @@ export default function RealTimeMonitoring({ appPage }) {
                 ))}
               </div>
             </div>
-          </div>
+          </PhoneFrame>
         </Reveal>
       </div>
     </section>
