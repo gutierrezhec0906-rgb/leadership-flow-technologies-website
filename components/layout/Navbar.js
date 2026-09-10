@@ -46,7 +46,7 @@ export default function Navbar() {
         solid ? "bg-dark-green/95 shadow-md backdrop-blur-md" : "bg-transparent"
       )}
     >
-      <nav className="container flex h-20 items-center justify-between" aria-label="Primary">
+      <nav className="container flex h-24 items-center justify-between" aria-label="Primary">
         <Link href={homeHref} aria-label={`${siteConfig.name} — Home`} className="flex items-center">
           <Image
             src="/images/logo-mark.png"
@@ -54,7 +54,7 @@ export default function Navbar() {
             width={273}
             height={273}
             priority
-            className="h-14 w-14 sm:hidden"
+            className="h-[70px] w-[70px] sm:hidden"
           />
           <Image
             src="/images/logo-full.webp"
@@ -62,7 +62,7 @@ export default function Navbar() {
             width={1969}
             height={684}
             priority
-            className="hidden h-16 w-auto sm:block"
+            className="hidden h-20 w-auto sm:block"
           />
         </Link>
 

@@ -15,7 +15,7 @@ const item = {
 
 export default function HomeHero({ hero }) {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-dark-green pt-20">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-dark-green pt-24">
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{

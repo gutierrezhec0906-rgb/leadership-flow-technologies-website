@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href={homeHref} aria-label={`${siteConfig.name} — Home`} className="inline-flex items-center">
-              <Image src="/images/logo-full.webp" alt="" width={1969} height={684} className="h-16 w-auto" />
+              <Image src="/images/logo-full.webp" alt="" width={1969} height={684} className="h-20 w-auto" />
             </Link>
             <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-teal-light">{tagline}</p>
             <p className="mt-4 text-sm leading-relaxed text-off-white/70">{footerColumns.about.text}</p>
