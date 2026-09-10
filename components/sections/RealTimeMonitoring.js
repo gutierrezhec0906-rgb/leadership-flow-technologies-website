@@ -1,12 +1,5 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
-import PhoneFrame from "@/components/ui/PhoneFrame";
-
-const sampleLeaders = [
-  { name: "Leader A", progress: 92 },
-  { name: "Leader B", progress: 78 },
-  { name: "Leader C", progress: 54 },
-  { name: "Leader D", progress: 31 },
-];
 
 export default function RealTimeMonitoring({ appPage }) {
   return (
@@ -25,27 +18,16 @@ export default function RealTimeMonitoring({ appPage }) {
             ))}
           </div>
         </Reveal>
-        <Reveal delay={0.15} className="mx-auto w-full max-w-xs">
-          <PhoneFrame src={appPage.monitoring.screenshotSrc} alt={appPage.monitoring.ariaLabel}>
-            <div className="flex h-full flex-col p-5" role="img" aria-label={appPage.monitoring.ariaLabel}>
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-light">
-                {appPage.monitoring.teamProgressLabel}
-              </p>
-              <div className="mt-4 space-y-4 pb-8">
-                {sampleLeaders.map((leader) => (
-                  <div key={leader.name}>
-                    <div className="mb-1.5 flex justify-between text-xs font-medium text-off-white/80">
-                      <span>{leader.name}</span>
-                      <span>{leader.progress}%</span>
-                    </div>
-                    <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
-                      <div className="h-full rounded-full bg-teal-light" style={{ width: `${leader.progress}%` }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </PhoneFrame>
+        <Reveal delay={0.15} className="mx-auto w-full max-w-lg">
+          <div className="relative aspect-[1600/1547] overflow-hidden rounded-2xl border border-white/10 shadow-card-hover">
+            <Image
+              src={appPage.monitoring.screenshotSrc}
+              alt={appPage.monitoring.screenshotAlt}
+              fill
+              className="object-cover object-top"
+              sizes="(min-width: 1024px) 512px, 90vw"
+            />
+          </div>
         </Reveal>
       </div>
     </section>
