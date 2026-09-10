@@ -1,21 +1,29 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import Icon from "@/components/ui/Icon";
 import SocialIcon from "@/components/ui/SocialIcon";
-import { siteConfig, footerColumns, socialLinks } from "@/lib/content";
+import { siteConfig, footerColumns as footerColumnsEn, socialLinks } from "@/lib/content";
+import { footerColumns as footerColumnsEs } from "@/lib/content.es";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isEs = pathname === "/es" || pathname.startsWith("/es/");
+  const footerColumns = isEs ? footerColumnsEs : footerColumnsEn;
+  const tagline = isEs ? siteConfig.taglineEs : siteConfig.taglineEn;
+  const homeHref = isEs ? "/es" : "/";
+
   return (
     <footer className="bg-dark-green text-off-white">
       <div className="container py-16">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" aria-label={`${siteConfig.name} — Home`} className="inline-flex items-center">
+            <Link href={homeHref} aria-label={`${siteConfig.name} — Home`} className="inline-flex items-center">
               <Image src="/images/logo-full.webp" alt="" width={1969} height={684} className="h-16 w-auto" />
             </Link>
-            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-teal-light">
-              {siteConfig.taglineEn}
-            </p>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-teal-light">{tagline}</p>
             <p className="mt-4 text-sm leading-relaxed text-off-white/70">{footerColumns.about.text}</p>
           </div>
 
@@ -95,7 +103,7 @@ export default function Footer() {
       <div className="border-t border-off-white/10">
         <div className="container flex flex-col items-center gap-2 py-6 text-center text-sm text-off-white/60 sm:flex-row sm:justify-between sm:text-left">
           <p>
-            &copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved. {siteConfig.taglineEn}.
+            &copy; {new Date().getFullYear()} {siteConfig.legalName}. {footerColumns.rightsReserved} {tagline}.
           </p>
         </div>
       </div>

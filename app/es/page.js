@@ -4,6 +4,7 @@ import SolutionSection from "@/components/sections/SolutionSection";
 import PracticesPreview from "@/components/sections/PracticesPreview";
 import SocialProof from "@/components/sections/SocialProof";
 import CtaBand from "@/components/sections/CtaBand";
+import { siteConfig } from "@/lib/content";
 import {
   hero,
   problemsSection,
@@ -16,16 +17,25 @@ import {
   socialProofSection,
   founderQuote,
   finalCta,
-} from "@/lib/content";
+} from "@/lib/content.es";
 
 export const metadata = {
-  title: "Lead with Accountability",
+  title: "Lidera con Accountability",
   description:
-    "The Accountability App is a fully integrated leadership development platform. Reduce your leadership development curve from 10 years to 6 months while monitoring every leader's progress in real time.",
-  alternates: { languages: { es: "/es" } },
+    "La Accountability App es una plataforma de desarrollo de liderazgo totalmente integrada. Reduce tu curva de desarrollo de liderazgo de 10 años a 6 meses mientras supervisas el progreso de cada líder en tiempo real.",
+  alternates: { canonical: "/es", languages: { en: "/" } },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: "es_MX",
+    alternateLocale: "en_US",
+    title: "Lidera con Accountability | Leadership Flow Technologies",
+    description:
+      "La Accountability App es una plataforma de desarrollo de liderazgo totalmente integrada donde tus líderes se desarrollan a sí mismos mientras tú supervisas su progreso en tiempo real.",
+  },
 };
 
-export default function HomePage() {
+export default function HomePageEs() {
   return (
     <>
       <HomeHero hero={hero} />
@@ -34,7 +44,7 @@ export default function HomePage() {
       <PracticesPreview
         practicesPreviewSection={practicesPreviewSection}
         practices={practices}
-        practicesHref="/practices"
+        practicesHref="/es/practices"
       />
       <SocialProof socialProofSection={socialProofSection} founderQuote={founderQuote} />
       <CtaBand headline={finalCta.headline} cta={finalCta.cta} />

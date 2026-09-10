@@ -2,13 +2,15 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import { skillPillars } from "@/lib/content";
-
-export default function SkillPillars() {
+export default function SkillPillars({ appPage, skillPillars }) {
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="The Foundation" headline="3 Skill Pillars" theme="light" />
+        <SectionHeader
+          eyebrow={appPage.skillPillarsSection.eyebrow}
+          headline={appPage.skillPillarsSection.headline}
+          theme="light"
+        />
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {skillPillars.map((pillar, index) => (
             <Reveal key={pillar.title} delay={index * 0.1}>

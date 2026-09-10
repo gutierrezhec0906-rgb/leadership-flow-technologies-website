@@ -1,13 +1,11 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import { solutionStats, solutionIntro } from "@/lib/content";
-
-export default function SolutionSection() {
+export default function SolutionSection({ solutionSection, solutionStats, solutionIntro }) {
   return (
     <section className="bg-dark-green py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="The Solution" headline="There is a better way" theme="dark" />
+        <SectionHeader eyebrow={solutionSection.eyebrow} headline={solutionSection.headline} theme="dark" />
         <Reveal className="mx-auto mt-8 max-w-2xl text-center">
           <p className="text-lg leading-relaxed text-off-white/80">{solutionIntro}</p>
         </Reveal>

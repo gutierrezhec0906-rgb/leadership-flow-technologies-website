@@ -2,13 +2,11 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import { appPage } from "@/lib/content";
-
-export default function PWASection() {
+export default function PWASection({ appPage }) {
   return (
     <section className="bg-pale-green py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="Available Anywhere" headline={appPage.pwa.headline} theme="light" />
+        <SectionHeader eyebrow={appPage.pwaEyebrow} headline={appPage.pwa.headline} theme="light" />
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {appPage.pwa.features.map((feature, index) => (
             <Reveal key={feature.title} delay={index * 0.1}>

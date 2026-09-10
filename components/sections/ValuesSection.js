@@ -2,13 +2,15 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import { aboutPage } from "@/lib/content";
-
-export default function ValuesSection() {
+export default function ValuesSection({ aboutPage }) {
   return (
     <section className="bg-pale-green py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="What We Stand For" headline="Our Values" theme="light" />
+        <SectionHeader
+          eyebrow={aboutPage.valuesSection.eyebrow}
+          headline={aboutPage.valuesSection.headline}
+          theme="light"
+        />
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {aboutPage.values.map((value, index) => (
             <Reveal key={value.title} delay={index * 0.1}>

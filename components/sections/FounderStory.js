@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
-import { aboutPage } from "@/lib/content";
 
-export default function FounderStory() {
+export default function FounderStory({ aboutPage }) {
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="container grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -10,7 +9,7 @@ export default function FounderStory() {
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-card">
             <Image
               src="/images/founder-photo-placeholder.svg"
-              alt="Placeholder portrait of Hector Gutierrez, founder of Leadership Flow Technologies"
+              alt={aboutPage.founderPhotoAlt}
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 400px, 80vw"
@@ -19,7 +18,7 @@ export default function FounderStory() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-sm font-bold uppercase tracking-widest text-mid-green">The Founder</p>
+          <p className="text-sm font-bold uppercase tracking-widest text-mid-green">{aboutPage.founderEyebrow}</p>
           <blockquote className="mt-4 border-l-4 border-mid-green pl-5 text-2xl font-bold italic leading-snug text-dark-green sm:text-3xl">
             &ldquo;{aboutPage.storyQuote}&rdquo;
           </blockquote>

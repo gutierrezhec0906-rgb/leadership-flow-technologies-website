@@ -2,13 +2,11 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import { problems } from "@/lib/content";
-
-export default function ProblemSection() {
+export default function ProblemSection({ problemsSection, problems }) {
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="The Problem" headline="The Leadership Development Problem" theme="light" />
+        <SectionHeader eyebrow={problemsSection.eyebrow} headline={problemsSection.headline} theme="light" />
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {problems.map((problem, index) => (
             <Reveal key={problem.title} delay={index * 0.1}>

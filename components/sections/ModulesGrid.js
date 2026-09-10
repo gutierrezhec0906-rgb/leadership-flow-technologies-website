@@ -2,13 +2,15 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import { moduleCategories } from "@/lib/content";
-
-export default function ModulesGrid() {
+export default function ModulesGrid({ appPage, moduleCategories }) {
   return (
     <section className="bg-pale-green py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="Inside the App" headline="18 Modules Across 3 Skill Areas" theme="light" />
+        <SectionHeader
+          eyebrow={appPage.modulesSection.eyebrow}
+          headline={appPage.modulesSection.headline}
+          theme="light"
+        />
         <div className="mt-14 space-y-16">
           {moduleCategories.map((category) => (
             <div key={category.key}>

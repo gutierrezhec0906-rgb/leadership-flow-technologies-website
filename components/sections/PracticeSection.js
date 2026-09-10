@@ -2,7 +2,7 @@ import Reveal from "@/components/ui/Reveal";
 import Icon from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
 
-export default function PracticeSection({ practice, index }) {
+export default function PracticeSection({ practice, index, practiceLabel }) {
   const reversed = index % 2 === 1;
   return (
     <section className={cn("py-16 sm:py-20", index % 2 === 0 ? "bg-white" : "bg-pale-green")}>
@@ -14,7 +14,7 @@ export default function PracticeSection({ practice, index }) {
         </Reveal>
         <Reveal delay={0.1} className={reversed ? "lg:order-1" : undefined}>
           <span className="text-sm font-bold uppercase tracking-widest text-mid-green">
-            Practice {practice.number}
+            {practiceLabel} {practice.number}
           </span>
           <h2 className="mt-3 text-3xl font-bold leading-tight text-dark-green sm:text-4xl">{practice.title}</h2>
           <div className="mt-5 space-y-4">

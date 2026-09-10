@@ -3,13 +3,11 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import { practices } from "@/lib/content";
-
-export default function PracticesPreview() {
+export default function PracticesPreview({ practicesPreviewSection, practices, practicesHref }) {
   return (
     <section className="bg-pale-green py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="The Framework" headline="The 5 Core Practices" theme="light" />
+        <SectionHeader eyebrow={practicesPreviewSection.eyebrow} headline={practicesPreviewSection.headline} theme="light" />
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {practices.map((practice, index) => (
             <Reveal key={practice.slug} delay={index * 0.08}>
@@ -26,10 +24,10 @@ export default function PracticesPreview() {
         </div>
         <Reveal className="mt-12 text-center">
           <Link
-            href="/practices"
+            href={practicesHref}
             className="inline-flex items-center gap-2 text-base font-semibold text-mid-green transition-colors hover:text-deep-teal"
           >
-            Explore all 5 practices
+            {practicesPreviewSection.exploreLink}
             <Icon name="ArrowRight" size={18} />
           </Link>
         </Reveal>

@@ -5,16 +5,26 @@ import SkillPillars from "@/components/sections/SkillPillars";
 import RealTimeMonitoring from "@/components/sections/RealTimeMonitoring";
 import PWASection from "@/components/sections/PWASection";
 import CtaBand from "@/components/sections/CtaBand";
-import { appPage, moduleCategories, skillPillars } from "@/lib/content";
+import { siteConfig } from "@/lib/content";
+import { appPage, moduleCategories, skillPillars } from "@/lib/content.es";
 
 export const metadata = {
-  title: "The Accountability App",
+  title: "La Accountability App",
   description:
-    "18 structured modules, 5 core practices, and real-time progress monitoring — the Accountability App is a fully integrated leadership development platform.",
-  alternates: { languages: { es: "/es/app" } },
+    "18 módulos estructurados, 5 prácticas centrales y monitoreo de progreso en tiempo real — la Accountability App es una plataforma de desarrollo de liderazgo totalmente integrada.",
+  alternates: { canonical: "/es/app", languages: { en: "/app" } },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: "es_MX",
+    alternateLocale: "en_US",
+    title: "La Accountability App | Leadership Flow Technologies",
+    description:
+      "Una plataforma de desarrollo de liderazgo totalmente integrada — 18 módulos, 5 prácticas centrales, monitoreo de progreso en tiempo real.",
+  },
 };
 
-export default function AppPage() {
+export default function AppPageEs() {
   return (
     <>
       <PageHero eyebrow={appPage.heroEyebrow} headline={appPage.heroHeadline} subheadline={appPage.heroSubheadline} />

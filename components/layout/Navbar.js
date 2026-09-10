@@ -5,7 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { navLinks, siteConfig } from "@/lib/content";
+import { navLinks as navLinksEn, siteConfig } from "@/lib/content";
+import { navLinks as navLinksEs } from "@/lib/content.es";
 import Icon from "@/components/ui/Icon";
 import LanguageToggle from "@/components/layout/LanguageToggle";
 import { cn } from "@/lib/cn";
@@ -14,6 +15,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const isEs = pathname === "/es" || pathname.startsWith("/es/");
+  const navLinks = isEs ? navLinksEs : navLinksEn;
+  const homeHref = isEs ? "/es" : "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -43,7 +47,7 @@ export default function Navbar() {
       )}
     >
       <nav className="container flex h-20 items-center justify-between" aria-label="Primary">
-        <Link href="/" aria-label={`${siteConfig.name} — Home`} className="flex items-center">
+        <Link href={homeHref} aria-label={`${siteConfig.name} — Home`} className="flex items-center">
           <Image
             src="/images/logo-mark.png"
             alt=""

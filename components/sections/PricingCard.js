@@ -2,7 +2,7 @@ import Icon from "@/components/ui/Icon";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
-export default function PricingCard({ tier }) {
+export default function PricingCard({ tier, mostPopularLabel }) {
   return (
     <div
       className={cn(
@@ -14,7 +14,7 @@ export default function PricingCard({ tier }) {
     >
       {tier.highlighted && (
         <span className="mb-4 inline-flex w-fit items-center rounded-full bg-mid-green px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-          Most Popular
+          {mostPopularLabel}
         </span>
       )}
       <h3 className={cn("text-xl font-bold", tier.highlighted ? "text-off-white" : "text-dark-green")}>

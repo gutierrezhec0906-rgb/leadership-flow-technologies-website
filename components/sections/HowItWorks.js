@@ -1,12 +1,15 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import Reveal from "@/components/ui/Reveal";
-import { appPage } from "@/lib/content";
 
-export default function HowItWorks() {
+export default function HowItWorks({ appPage }) {
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="How It Works" headline="From self-development to real-time visibility" theme="light" />
+        <SectionHeader
+          eyebrow={appPage.howItWorksSection.eyebrow}
+          headline={appPage.howItWorksSection.headline}
+          theme="light"
+        />
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-3">
           {appPage.howItWorks.map((step, index) => (
             <Reveal key={step.step} delay={index * 0.1}>

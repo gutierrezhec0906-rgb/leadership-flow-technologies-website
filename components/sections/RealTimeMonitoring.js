@@ -1,5 +1,4 @@
 import Reveal from "@/components/ui/Reveal";
-import { appPage } from "@/lib/content";
 
 const sampleLeaders = [
   { name: "Leader A", progress: 92 },
@@ -8,12 +7,12 @@ const sampleLeaders = [
   { name: "Leader D", progress: 31 },
 ];
 
-export default function RealTimeMonitoring() {
+export default function RealTimeMonitoring({ appPage }) {
   return (
     <section className="bg-dark-green py-20 sm:py-28">
       <div className="container grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <Reveal>
-          <p className="text-sm font-bold uppercase tracking-widest text-teal-light">Real-Time Monitoring</p>
+          <p className="text-sm font-bold uppercase tracking-widest text-teal-light">{appPage.monitoringEyebrow}</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight text-off-white sm:text-4xl">
             {appPage.monitoring.headline}
           </h2>
@@ -29,10 +28,12 @@ export default function RealTimeMonitoring() {
           <div
             className="rounded-[2.5rem] border-4 border-white/10 bg-deep-teal p-4 shadow-card-hover"
             role="img"
-            aria-label="Illustration of the Accountability App's real-time team progress dashboard on a phone"
+            aria-label={appPage.monitoring.ariaLabel}
           >
             <div className="rounded-[1.75rem] bg-white/5 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal-light">Team Progress</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-teal-light">
+                {appPage.monitoring.teamProgressLabel}
+              </p>
               <div className="mt-4 space-y-4">
                 {sampleLeaders.map((leader) => (
                   <div key={leader.name}>

@@ -1,13 +1,11 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import Reveal from "@/components/ui/Reveal";
 import Icon from "@/components/ui/Icon";
-import { founderQuote } from "@/lib/content";
-
-export default function SocialProof() {
+export default function SocialProof({ socialProofSection, founderQuote }) {
   return (
     <section className="bg-dark-green py-20 sm:py-28">
       <div className="container">
-        <SectionHeader eyebrow="From the Founder" headline="Built by a leader who lived it" theme="dark" />
+        <SectionHeader eyebrow={socialProofSection.eyebrow} headline={socialProofSection.headline} theme="dark" />
         <Reveal className="mx-auto mt-12 max-w-3xl">
           <div className="rounded-2xl border border-off-white/10 bg-white/5 p-8 sm:p-10">
             <Icon name="Quote" className="mb-4 text-teal-light" size={32} />

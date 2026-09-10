@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
-import { hero } from "@/lib/content";
 
 const container = {
   hidden: {},
@@ -14,7 +13,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
 
-export default function HomeHero() {
+export default function HomeHero({ hero }) {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-dark-green pt-20">
       <div
@@ -27,7 +26,7 @@ export default function HomeHero() {
       />
       <motion.div className="container relative py-20 text-center" variants={container} initial="hidden" animate="show">
         <motion.p variants={item} className="mb-5 text-sm font-bold uppercase tracking-widest text-teal-light">
-          For CHROs, CEOs & Operations Leaders in Manufacturing
+          {hero.eyebrow}
         </motion.p>
         <motion.h1
           variants={item}

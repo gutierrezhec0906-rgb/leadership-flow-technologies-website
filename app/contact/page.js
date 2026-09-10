@@ -8,15 +8,16 @@ export const metadata = {
   title: "Contact",
   description:
     "Tell us about your team and see how the Accountability App fits — book a demo or send a message to Leadership Flow Technologies.",
+  alternates: { languages: { es: "/es/contact" } },
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHero headline={contactPage.heroHeadline} subheadline={contactPage.heroSubheadline} />
-      <ContactFormSection />
-      <DemoSection />
-      <MapSection />
+      <ContactFormSection contactPage={contactPage} demoHref="/contact#demo" />
+      <DemoSection contactPage={contactPage} />
+      <MapSection contactPage={contactPage} />
     </>
   );
 }

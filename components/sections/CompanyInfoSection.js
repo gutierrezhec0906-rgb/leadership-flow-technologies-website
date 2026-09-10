@@ -1,14 +1,13 @@
 import Reveal from "@/components/ui/Reveal";
-import { aboutPage } from "@/lib/content";
 
-const items = [
-  { label: "Company", value: aboutPage.companyInfo.name },
-  { label: "Location", value: aboutPage.companyInfo.location },
-  { label: "Entity Number", value: aboutPage.companyInfo.entity.replace("Entity ", "") },
-  { label: "Founded", value: aboutPage.companyInfo.founded.replace("Founded ", "") },
-];
+export default function CompanyInfoSection({ aboutPage }) {
+  const items = [
+    { label: aboutPage.companyInfoLabels.company, value: aboutPage.companyInfo.name },
+    { label: aboutPage.companyInfoLabels.location, value: aboutPage.companyInfo.location },
+    { label: aboutPage.companyInfoLabels.entityNumber, value: aboutPage.companyInfo.entityNumber },
+    { label: aboutPage.companyInfoLabels.founded, value: aboutPage.companyInfo.foundedYear },
+  ];
 
-export default function CompanyInfoSection() {
   return (
     <section className="bg-white py-14">
       <div className="container">

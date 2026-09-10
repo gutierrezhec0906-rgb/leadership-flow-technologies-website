@@ -7,6 +7,7 @@ export const metadata = {
   title: "The 5 Core Practices",
   description:
     "Set the Bar, Spark the Vision, Improve the Flow, Enable the Team, and Win with Compassion — the 5 core practices of accountability built into every module of the Accountability App.",
+  alternates: { languages: { es: "/es/practices" } },
 };
 
 export default function PracticesPage() {
@@ -14,7 +15,12 @@ export default function PracticesPage() {
     <>
       <PageHero headline={practicesPage.headline} subheadline={practicesPage.subheadline} />
       {practices.map((practice, index) => (
-        <PracticeSection key={practice.slug} practice={practice} index={index} />
+        <PracticeSection
+          key={practice.slug}
+          practice={practice}
+          index={index}
+          practiceLabel={practicesPage.practiceLabel}
+        />
       ))}
       <CtaBand
         headline={practicesPage.bottomCta.text}
