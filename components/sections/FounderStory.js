@@ -8,7 +8,7 @@ export default function FounderStory({ aboutPage }) {
         <Reveal>
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-card">
             <Image
-              src="/images/founder-photo-placeholder.svg"
+              src="/images/founder-photo.webp"
               alt={aboutPage.founderPhotoAlt}
               fill
               className="object-cover"
