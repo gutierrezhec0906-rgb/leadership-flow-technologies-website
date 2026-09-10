@@ -50,7 +50,7 @@ export default function Navbar() {
             width={273}
             height={273}
             priority
-            className="h-11 w-11 sm:hidden"
+            className="h-14 w-14 sm:hidden"
           />
           <Image
             src="/images/logo-full.webp"
@@ -58,7 +58,7 @@ export default function Navbar() {
             width={1969}
             height={684}
             priority
-            className="hidden h-9 w-auto sm:block"
+            className="hidden h-16 w-auto sm:block"
           />
         </Link>
 
