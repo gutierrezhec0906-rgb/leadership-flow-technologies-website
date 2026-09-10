@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Icon from "@/components/ui/Icon";
 import SocialIcon from "@/components/ui/SocialIcon";
 import { siteConfig, footerColumns, socialLinks } from "@/lib/content";
@@ -9,11 +10,8 @@ export default function Footer() {
       <div className="container py-16">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mid-green text-sm font-bold text-white">
-                LF
-              </span>
-              <span className="text-lg font-bold">{siteConfig.name}</span>
+            <Link href="/" aria-label={`${siteConfig.name} — Home`} className="inline-flex items-center">
+              <Image src="/images/logo-full.png" alt="" width={964} height={324} className="h-10 w-auto" />
             </Link>
             <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-teal-light">
               {siteConfig.taglineEn}

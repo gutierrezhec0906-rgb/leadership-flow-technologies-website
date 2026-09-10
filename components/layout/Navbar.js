@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { navLinks, siteConfig } from "@/lib/content";
@@ -42,13 +43,23 @@ export default function Navbar() {
       )}
     >
       <nav className="container flex h-20 items-center justify-between" aria-label="Primary">
-        <Link href="/" className="flex items-center gap-2.5 text-off-white">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mid-green text-sm font-bold text-white">
-            LF
-          </span>
-          <span className="hidden text-base font-bold leading-tight sm:inline sm:text-lg">
-            {siteConfig.name}
-          </span>
+        <Link href="/" aria-label={`${siteConfig.name} — Home`} className="flex items-center">
+          <Image
+            src="/images/logo-mark.png"
+            alt=""
+            width={273}
+            height={273}
+            priority
+            className="h-11 w-11 sm:hidden"
+          />
+          <Image
+            src="/images/logo-full.png"
+            alt=""
+            width={964}
+            height={324}
+            priority
+            className="hidden h-9 w-auto sm:block"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
