@@ -27,7 +27,7 @@ export default function HowItWorks({ appPage }) {
                 src={appPage.howItWorksSection.screenshotSrc}
                 alt={appPage.howItWorksSection.screenshotAlt}
                 fill
-                className="object-cover"
+                className="scale-125 object-cover"
                 sizes="280px"
               />
             </div>

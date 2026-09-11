@@ -24,7 +24,7 @@ export default function RealTimeMonitoring({ appPage }) {
               src={appPage.monitoring.screenshotSrc}
               alt={appPage.monitoring.screenshotAlt}
               fill
-              className="object-cover"
+              className="scale-125 object-cover"
               sizes="280px"
             />
           </div>

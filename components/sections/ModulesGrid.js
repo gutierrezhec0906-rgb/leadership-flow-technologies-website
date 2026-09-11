@@ -23,7 +23,7 @@ export default function ModulesGrid({ appPage, moduleCategories }) {
                 src={appPage.modulesSection.screenshotSrc}
                 alt={appPage.modulesSection.screenshotAlt}
                 fill
-                className="object-cover"
+                className="scale-125 object-cover"
                 sizes="280px"
               />
             </div>
