@@ -18,14 +18,14 @@ export default function RealTimeMonitoring({ appPage }) {
             ))}
           </div>
         </Reveal>
-        <Reveal delay={0.15} className="mx-auto w-full max-w-lg">
-          <div className="relative aspect-[1600/1547] overflow-hidden rounded-2xl border border-white/10 shadow-card-hover">
+        <Reveal delay={0.15} className="mx-auto w-full max-w-[280px]">
+          <div className="relative aspect-[800/1736] overflow-hidden rounded-[2rem] shadow-card-hover">
             <Image
               src={appPage.monitoring.screenshotSrc}
               alt={appPage.monitoring.screenshotAlt}
               fill
-              className="object-cover object-top"
-              sizes="(min-width: 1024px) 512px, 90vw"
+              className="object-cover"
+              sizes="280px"
             />
           </div>
         </Reveal>

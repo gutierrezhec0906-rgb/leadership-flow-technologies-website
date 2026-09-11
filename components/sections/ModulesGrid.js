@@ -1,8 +1,12 @@
+import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
+
 export default function ModulesGrid({ appPage, moduleCategories }) {
+  const featuredModule = moduleCategories[0].modules[0];
+
   return (
     <section className="bg-pale-green py-20 sm:py-28">
       <div className="container">
@@ -11,7 +15,29 @@ export default function ModulesGrid({ appPage, moduleCategories }) {
           headline={appPage.modulesSection.headline}
           theme="light"
         />
-        <div className="mt-14 space-y-16">
+
+        <div className="mt-14 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <Reveal className="mx-auto w-full max-w-[280px] lg:order-2">
+            <div className="relative aspect-[800/1702] overflow-hidden rounded-[2rem] shadow-card-hover">
+              <Image
+                src={appPage.modulesSection.screenshotSrc}
+                alt={appPage.modulesSection.screenshotAlt}
+                fill
+                className="object-cover"
+                sizes="280px"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1} className="lg:order-1">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white text-mid-green">
+              <Icon name={featuredModule.icon} size={24} />
+            </div>
+            <h3 className="text-2xl font-bold text-dark-green">{featuredModule.name}</h3>
+            <p className="mt-3 max-w-sm leading-relaxed text-navy/80">{featuredModule.description}</p>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 space-y-16">
           {moduleCategories.map((category) => (
             <div key={category.key}>
               <div className="mb-6 flex flex-col gap-1 border-b border-navy/10 pb-4 sm:flex-row sm:items-baseline sm:justify-between">
