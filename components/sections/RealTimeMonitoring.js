@@ -19,12 +19,12 @@ export default function RealTimeMonitoring({ appPage }) {
           </div>
         </Reveal>
         <Reveal delay={0.15} className="mx-auto w-full max-w-[280px]">
-          <div className="relative aspect-[800/1736] overflow-hidden rounded-[2rem] shadow-card-hover">
+          <div className="relative aspect-[700/1418]">
             <Image
               src={appPage.monitoring.screenshotSrc}
               alt={appPage.monitoring.screenshotAlt}
               fill
-              className="scale-125 object-cover"
+              className="object-contain"
               sizes="280px"
             />
           </div>

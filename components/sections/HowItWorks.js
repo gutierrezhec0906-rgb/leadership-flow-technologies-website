@@ -22,12 +22,12 @@ export default function HowItWorks({ appPage }) {
             ))}
           </div>
           <Reveal delay={0.15} className="mx-auto w-full max-w-[280px]">
-            <div className="relative aspect-[609/1257] overflow-hidden rounded-[2rem] shadow-card-hover">
+            <div className="relative aspect-[700/1448]">
               <Image
                 src={appPage.howItWorksSection.screenshotSrc}
                 alt={appPage.howItWorksSection.screenshotAlt}
                 fill
-                className="scale-125 object-cover"
+                className="object-contain"
                 sizes="280px"
               />
             </div>
