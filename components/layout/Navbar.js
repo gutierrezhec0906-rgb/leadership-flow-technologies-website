@@ -76,7 +76,7 @@ export default function Navbar() {
                     href={link.href}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "text-sm font-semibold transition-colors hover:text-teal-light",
+                      "text-[17.5px] font-semibold transition-colors hover:text-teal-light",
                       isActive ? "text-teal-light" : "text-off-white"
                     )}
                   >
