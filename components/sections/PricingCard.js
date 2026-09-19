@@ -2,7 +2,7 @@ import Icon from "@/components/ui/Icon";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
-export default function PricingCard({ tier, mostPopularLabel }) {
+export default function PricingCard({ tier, mostPopularLabel, annualLabel }) {
   return (
     <div
       className={cn(
@@ -33,6 +33,15 @@ export default function PricingCard({ tier, mostPopularLabel }) {
           </span>
         )}
       </div>
+      {tier.annualPrice && (
+        <p className={cn("mt-1 text-sm", tier.highlighted ? "text-off-white/60" : "text-navy/50")}>
+          {annualLabel}{" "}
+          <span className={cn("font-semibold", tier.highlighted ? "text-off-white/80" : "text-navy/70")}>
+            {tier.annualPrice}
+          </span>
+          {tier.annualPeriod}
+        </p>
+      )}
       <ul className="mt-8 flex-1 space-y-3">
         {tier.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2.5 text-sm">

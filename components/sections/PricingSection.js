@@ -17,7 +17,7 @@ export default function PricingSection({ pricingTiers, pricingPage }) {
         <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {pricingTiers.map((tier, index) => (
             <Reveal key={tier.name} delay={index * 0.1} className="h-full">
-              <PricingCard tier={tier} mostPopularLabel={pricingPage.mostPopularLabel} />
+              <PricingCard tier={tier} mostPopularLabel={pricingPage.mostPopularLabel} annualLabel={pricingPage.annualLabel} />
             </Reveal>
           ))}
         </div>
